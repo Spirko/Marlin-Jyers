@@ -736,7 +736,7 @@
  * Override with M92
  *                                      X, Y, Z, E0 [, E1[, E2...]]
  */
-#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 100 }
+#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 139 }
 
 /**
  * Default Max Feed Rate (mm/s)
@@ -839,7 +839,7 @@
 //#define Z_MIN_PROBE_USES_Z_MIN_ENDSTOP_PIN
 
 // Force the use of the probe for Z-axis homing
-#define USE_PROBE_FOR_Z_HOMING
+//#define USE_PROBE_FOR_Z_HOMING
 
 /**
  * Z_MIN_PROBE_PIN
@@ -992,7 +992,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET {  -44, -7,- 2.84 }
+#define NOZZLE_TO_PROBE_OFFSET { -45, -25, 0 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
@@ -1162,12 +1162,12 @@
 // @section machine
 
 // The size of the print bed
-#define X_BED_SIZE 231
-#define Y_BED_SIZE 228
+#define X_BED_SIZE 220
+#define Y_BED_SIZE 220
 
 // Travel limits (mm) after homing, corresponding to endstop positions.
-#define X_MIN_POS 4
-#define Y_MIN_POS 7
+#define X_MIN_POS 5
+#define Y_MIN_POS 5
 #define Z_MIN_POS 0
 #define X_MAX_POS (X_BED_SIZE + X_MIN_POS)
 #define Y_MAX_POS (Y_BED_SIZE + Y_MIN_POS)
@@ -1375,7 +1375,7 @@
 #if EITHER(AUTO_BED_LEVELING_LINEAR, AUTO_BED_LEVELING_BILINEAR)
 
   // Set the number of grid points per dimension.
-  #define GRID_MAX_POINTS_X 9
+  #define GRID_MAX_POINTS_X 5
   #define GRID_MAX_POINTS_Y GRID_MAX_POINTS_X
 
   // Probe along the Y axis, advancing X after each column
@@ -1485,7 +1485,7 @@
 // - Move the Z probe (or nozzle) to a defined XY point before Z Homing.
 // - Prevent Z homing when the Z probe is outside bed area.
 //
-#define Z_SAFE_HOMING
+//#define Z_SAFE_HOMING
 
 #if ENABLED(Z_SAFE_HOMING)
   #define Z_SAFE_HOMING_X_POINT ((X_BED_SIZE - 10) / 2)    // X point for Z homing
